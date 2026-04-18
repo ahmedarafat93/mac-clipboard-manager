@@ -1,0 +1,42 @@
+name: ClipboardManager
+options:
+  bundleIdPrefix: com.habibi
+  deploymentTarget:
+    macOS: "13.0"
+  createIntermediateGroups: true
+
+settings:
+  base:
+    MARKETING_VERSION: "1.0.0"
+    CURRENT_PROJECT_VERSION: "1"
+    DEVELOPMENT_TEAM: ""
+    CODE_SIGN_STYLE: Automatic
+    SWIFT_VERSION: "5.9"
+    ENABLE_HARDENED_RUNTIME: YES
+    COMBINE_HIDPI_IMAGES: YES
+
+targets:
+  ClipboardManager:
+    type: application
+    platform: macOS
+    sources:
+      - ClipboardManager
+    info:
+      path: ClipboardManager/Info.plist
+      properties:
+        CFBundleName: ClipboardManager
+        CFBundleDisplayName: Clipboard Manager
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        LSMinimumSystemVersion: $(MACOSX_DEPLOYMENT_TARGET)
+        LSUIElement: true
+        NSHumanReadableCopyright: "Copyright © 2026"
+        NSAppleEventsUsageDescription: "ClipboardManager needs to paste clipboard items into the active app."
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.habibi.ClipboardManager
+        CODE_SIGN_ENTITLEMENTS: ClipboardManager/ClipboardManager.entitlements
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        ENABLE_APP_SANDBOX: NO
+        LD_RUNPATH_SEARCH_PATHS: "$(inherited) @executable_path/../Frameworks"

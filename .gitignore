@@ -1,0 +1,26 @@
+# macOS
+.DS_Store
+
+# Xcode build output
+build/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+*.moved-aside
+*.xcscmblueprint
+
+# Swift / SwiftPM
+.build/
+.swiftpm/
+Package.resolved
+Packages/
+
+# CocoaPods (not used)
+Pods/
+
+# Carthage (not used)
+Carthage/Build/
+
+# Local runtime data
+*.log
+*.env
