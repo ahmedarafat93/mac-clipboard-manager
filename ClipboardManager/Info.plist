@@ -26,6 +26,12 @@
 	<true/>
 	<key>NSAppleEventsUsageDescription</key>
 	<string>ClipboardManager needs to paste clipboard items into the active app.</string>
+	<key>NSDesktopFolderUsageDescription</key>
+	<string>ClipboardManager watches for new screenshots saved to your Desktop and adds them to its clipboard history.</string>
+	<key>NSDocumentsFolderUsageDescription</key>
+	<string>ClipboardManager watches for new screenshots saved to your Documents folder and adds them to its clipboard history.</string>
+	<key>NSDownloadsFolderUsageDescription</key>
+	<string>ClipboardManager watches for new screenshots saved to your Downloads folder and adds them to its clipboard history.</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2026</string>
 </dict>

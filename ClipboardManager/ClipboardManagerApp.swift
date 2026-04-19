@@ -21,6 +21,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     private(set) var panelController: ClipboardPanelController!
     private var hotkeyManager: HotkeyManager!
     private var doubleTapDetector: DoubleTapDetector!
+    private var screenshotWatcher: ScreenshotWatcher!
     private var statusItem: NSStatusItem?
     private var cancellables = Set<AnyCancellable>()
 
@@ -37,6 +38,12 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
         doubleTapDetector = DoubleTapDetector()
         doubleTapDetector.onDoubleTap = { [weak self] in self?.showPanelAtCursor() }
+
+        screenshotWatcher = ScreenshotWatcher()
+        screenshotWatcher.onNewScreenshot = { [weak self] data, source in
+            self?.clipboardStore.addImage(data, source: source)
+        }
+        screenshotWatcher.start()
 
         applySettings()
         observeSettings()

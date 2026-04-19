@@ -32,6 +32,9 @@ targets:
         LSUIElement: true
         NSHumanReadableCopyright: "Copyright © 2026"
         NSAppleEventsUsageDescription: "ClipboardManager needs to paste clipboard items into the active app."
+        NSDesktopFolderUsageDescription: "ClipboardManager watches for new screenshots saved to your Desktop and adds them to its clipboard history."
+        NSDocumentsFolderUsageDescription: "ClipboardManager watches for new screenshots saved to your Documents folder and adds them to its clipboard history."
+        NSDownloadsFolderUsageDescription: "ClipboardManager watches for new screenshots saved to your Downloads folder and adds them to its clipboard history."
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.habibi.ClipboardManager

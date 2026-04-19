@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0DB6067AFA349E4558D977F1 /* ClipboardManagerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFB8BF501CF115E688CD7CC /* ClipboardManagerApp.swift */; };
+		16066E4A3254C33BBCAF6A41 /* ScreenshotWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E33C4282BCD98D21131633 /* ScreenshotWatcher.swift */; };
 		21C18E87655844CE70AF8654 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947CF0D87B46D0FEA9D2E68B /* AppSettings.swift */; };
 		27A20C6DF7832C3E57E93227 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78B868725DCA696E0350A574 /* Assets.xcassets */; };
 		46EEF6EF1DCA21067A179499 /* ClipboardStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C902CFD566D344D44BF6DA /* ClipboardStore.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		33E33C4282BCD98D21131633 /* ScreenshotWatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotWatcher.swift; sourceTree = "<group>"; };
 		61DB7A248DD4AC7795DA2AE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		78B868725DCA696E0350A574 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		815BFA5EFF4579F5E5132CD3 /* DoubleTapDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleTapDetector.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				9A185DC91A2EB5E8879F5050 /* HotkeyManager.swift */,
 				61DB7A248DD4AC7795DA2AE9 /* Info.plist */,
 				DD503FC7FFF28F3E144B0F60 /* Paster.swift */,
+				33E33C4282BCD98D21131633 /* ScreenshotWatcher.swift */,
 			);
 			path = ClipboardManager;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 				4E7917EAB2B543D97525194E /* HistoryView.swift in Sources */,
 				8E14C4D65118BF02790FDB1F /* HotkeyManager.swift in Sources */,
 				5B28335F1B715AEB4EC55A91 /* Paster.swift in Sources */,
+				16066E4A3254C33BBCAF6A41 /* ScreenshotWatcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

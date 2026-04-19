@@ -8,15 +8,20 @@ struct ClipboardItem: Identifiable, Equatable, Codable {
     let kind: Kind
     let text: String?
     let imageData: Data?
+    /// Present for images captured from a file (e.g. screenshot filename without extension).
+    /// `nil` for plain clipboard images.
+    let sourceName: String?
     let createdAt: Date
 
     static func text(_ value: String) -> ClipboardItem {
-        ClipboardItem(id: UUID(), kind: .text, text: value, imageData: nil, createdAt: Date())
+        ClipboardItem(id: UUID(), kind: .text, text: value, imageData: nil, sourceName: nil, createdAt: Date())
     }
 
-    static func image(_ data: Data) -> ClipboardItem {
-        ClipboardItem(id: UUID(), kind: .image, text: nil, imageData: data, createdAt: Date())
+    static func image(_ data: Data, source: String? = nil) -> ClipboardItem {
+        ClipboardItem(id: UUID(), kind: .image, text: nil, imageData: data, sourceName: source, createdAt: Date())
     }
+
+    var isScreenshot: Bool { kind == .image && sourceName != nil }
 
     var preview: String {
         switch kind {
@@ -24,9 +29,19 @@ struct ClipboardItem: Identifiable, Equatable, Codable {
             let trimmed = (text ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
             return trimmed.isEmpty ? "(empty)" : trimmed
         case .image:
+            if sourceName != nil {
+                return "Screenshot at \(Self.screenshotTimeFormatter.string(from: createdAt))"
+            }
             return "Image"
         }
     }
+
+    private static let screenshotTimeFormatter: DateFormatter = {
+        let f = DateFormatter()
+        f.dateStyle = .none
+        f.timeStyle = .medium
+        return f
+    }()
 
     var nsImage: NSImage? {
         guard kind == .image, let data = imageData else { return nil }

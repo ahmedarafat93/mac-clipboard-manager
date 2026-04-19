@@ -69,6 +69,14 @@ final class ClipboardStore: ObservableObject {
         a.kind == b.kind && a.text == b.text && a.imageData == b.imageData
     }
 
+    /// Adds an externally-sourced image (e.g. a screenshot saved to a file)
+    /// to the history, using the same dedup/ordering rules as pasteboard copies.
+    /// `source` is an optional human-friendly label (e.g. the screenshot filename
+    /// without extension) that drives the preview text.
+    func addImage(_ data: Data, source: String? = nil) {
+        insert(.image(data, source: source))
+    }
+
     func copy(_ item: ClipboardItem) {
         suppressNext = true
         pasteboard.clearContents()
